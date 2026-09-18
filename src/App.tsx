@@ -8,6 +8,7 @@ import { LibraryRecommendations } from './components/LibraryRecommendations';
 import { ForensicChecklist } from './components/ForensicChecklist';
 import { InstallationManual } from './components/InstallationManual';
 import { UserGuide } from './components/UserGuide';
+import { AudioAnalyzer } from './components/AudioAnalyzer';
 
 type MenuSection = 'analyzer' | 'summary' | 'architecture' | 'roadmap' | 'code' | 'libraries' | 'checklist' | 'installation' | 'userguide';
 

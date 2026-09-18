@@ -1,4 +1,4 @@
-# 🎙️ AltaVoz Forensic-1
+# 🎙️ AltaVoz Forensic-1 - Sistema Funcional
 
 **Sistema Funcional de Análise Forense de Áudio**
 
