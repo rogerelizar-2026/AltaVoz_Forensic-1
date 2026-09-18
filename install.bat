@@ -1,6 +1,6 @@
 @echo off
 REM ============================================================
-REM AltaVoz Forensic-1 - Instalador Inteligente (Windows)
+REM AltaVoz Forensic-1 - Instalador Unificado (Windows)
 REM ============================================================
 REM Este instalador detecta automaticamente a pasta do projeto
 REM ============================================================
@@ -8,7 +8,7 @@ REM ============================================================
 echo.
 echo ==========================================================
 echo.
-echo     🎙️  AltaVoz Forensic-1 - Instalador Inteligente
+echo     🎙️  AltaVoz Forensic-1 - Instalador
 echo.
 echo ==========================================================
 echo.
