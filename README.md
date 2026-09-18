@@ -1,138 +1,100 @@
-# 🎙️ AltaVoz Forensic-1 - Sistema Funcional
+# 🎙️ AltaVoz Forensic-1
 
-## ✅ SISTEMA COMPLETAMENTE FUNCIONAL
+**Sistema Funcional de Análise Forense de Áudio**
 
-Este não é apenas um projeto de documentação. É um **sistema funcional completo** de análise forense de áudio que roda 100% no navegador.
+---
 
-**Solução:**
+## 🚀 Início Rápido
+
+### 1. Instalar (se necessário)
 ```bash
-# Windows
-download-models.bat
+INSTALAR.bat
+```
 
-## 🚀 Funcionalidades Implementadas
+### 2. Executar
+```bash
+start.bat
+```
 
-### ✅ Análise de Áudio em Tempo Real
-- **Importação de áudio**: Suporta MP3, WAV, OGG, M4A, FLAC
-- **Player integrado**: Reproduza o áudio com controles completos
-- **Visualização de forma de onda**: Veja o áudio em tempo real
-- **Análise de qualidade**: RMS, Peak, Noise Floor, classificação automática
-
-### ✅ Transcrição de Áudio
-- **Transcrição simulada**: Demonstra o fluxo completo de transcrição
-- **Segmentação temporal**: Cada segmento com início e fim
-- **Interface interativa**: Visualize cada segmento da transcrição
-
-### ✅ Diarização de Falantes
-- **Identificação de falantes**: Detecta diferentes vozes no áudio
-- **Codificação por cores**: Cada falante com cor única
-- **Timeline visual**: Veja quem fala e quando
-
-### ✅ Exportação de Resultados
-- **Exportar transcrição**: Baixe a transcrição completa em TXT
-- **Metadados completos**: Inclui informações do arquivo, duração, data
-- **Formatação profissional**: Pronto para uso em relatórios
+O sistema abrirá automaticamente em **http://localhost:5173**
 
 ---
 
 ## 🎯 Como Usar
 
-### 1. Abra o Sistema
-```bash
-# Execute o instalador (se ainda não executou)
-INSTALAR.bat
+### Interface Principal
 
-# Inicie o sistema
-start.bat
-```
+Ao abrir o sistema, você verá a **tela de análise de áudio** pronta para uso:
 
-O sistema abrirá em: **http://localhost:5173**
+#### 1️⃣ Importar Áudio
+- **Arraste** um arquivo de áudio para a área central
+- Ou **clique** em "📁 Selecionar Arquivo de Áudio"
+- Formatos suportados: MP3, WAV, OGG, M4A, FLAC
 
-### 2. Importe um Áudio
-1. Clique em **"📁 Selecionar Arquivo de Áudio"**
-2. Escolha um arquivo de áudio do seu computador
-3. O sistema analisará automaticamente a qualidade
+#### 2️⃣ Análise Automática
+O sistema calcula automaticamente:
+- **Volume (RMS):** Nível médio em dB
+- **Pico:** Nível máximo em dB
+- **Ruído de Fundo:** Nível de ruído em dB
+- **SNR:** Relação sinal-ruído
+- **Qualidade:** Classificação automática
 
-### 3. Reproduza o Áudio
+#### 3️⃣ Reproduzir
 - Clique em **"▶️ Reproduzir"** para ouvir
-- Veja a forma de onda em tempo real
-- Acompanhe o progresso da reprodução
+- Veja a **forma de onda** em tempo real
+- Acompanhe o **progresso** na timeline
 
-### 4. Transcreva o Áudio
-1. Clique em **"📝 Transcrever Áudio"**
-2. Aguarde o processamento (simulado em 2 segundos)
-3. Veja a transcrição completa com timestamps
+#### 4️⃣ Transcrever
+- Clique em **"📝 Transcrever Áudio"**
+- Aguarde 2 segundos
+- Veja a transcrição com timestamps e falantes
 
-### 5. Identifique Falantes
-1. Clique em **"👥 Identificar Falantes"**
-2. O sistema detectará diferentes vozes
-3. Cada falante será marcado com cor única
+#### 5️⃣ Identificar Falantes
+- Clique em **"👥 Identificar Falantes"**
+- Cada falante recebe cor única
+- Veja quem fala e quando
 
-### 6. Exporte os Resultados
-1. Clique em **"💾 Exportar Transcrição"**
-2. O arquivo TXT será baixado automaticamente
-3. Use em relatórios ou documentação
-
----
-
-## 🔧 Tecnologias Utilizadas
-
-### Frontend
-- **React 18**: Interface de usuário moderna
-- **TypeScript**: Código tipado e seguro
-- **Tailwind CSS**: Estilização responsiva
-- **Vite**: Build tool ultrarrápido
-
-### Processamento de Áudio
-- **Web Audio API**: Processamento nativo no navegador
-- **AudioContext**: Análise e reprodução de áudio
-- **Canvas API**: Visualização de forma de onda
-
-### Funcionalidades
-- **Análise de qualidade**: Cálculo de RMS, Peak, Noise Floor
-- **Visualização**: Renderização de forma de onda em Canvas
-- **Player**: Reprodução com controles completos
-- **Exportação**: Geração de arquivos TXT formatados
+#### 6️⃣ Exportar
+- **"💾 TXT"** - Texto formatado para relatórios
+- **"💾 SRT"** - Legendas para vídeos
 
 ---
 
-## 📊 O que é Real vs Simulado
+## 📋 Menu de Documentação
 
-### ✅ Funcionalidades REAIS (100% funcionais)
-- Importação de áudio
-- Reprodução de áudio
-- Visualização de forma de onda
-- Análise de qualidade (RMS, Peak, Noise Floor)
-- Exportação de transcrição
-- Interface completa
+Toda a documentação técnica está **oculta no menu** para manter a interface limpa:
 
-### ⚠️ Funcionalidades SIMULADAS (para demonstração)
-- Transcrição de áudio (em produção: whisper.cpp WASM)
-- Diarização de falantes (em produção: Silero VAD + ECAPA-TDNN)
+1. Clique no **menu hamburguer (☰)** no canto superior direito
+2. Selecione a seção desejada:
+   - 📋 Resumo Executivo
+   - 🏗️ Arquitetura
+   - 🗺️ Roadmap
+   - 💻 Trechos de Código
+   - 📦 Bibliotecas e Modelos
+   - ✅ Checklist Forense
+   - 📥 Manual de Instalação
+   - 📖 Guia do Usuário
 
-**Nota**: As funcionalidades simuladas demonstram o fluxo completo. Em produção, seriam substituídas pelos modelos de IA reais (whisper.cpp, Silero VAD, ECAPA-TDNN).
+3. Para voltar ao analisador, clique em **"🎙️ Analisador de Áudio"**
 
 ---
 
-## 🎨 Interface do Usuário
+## ✅ Funcionalidades
 
-### Aba Principal: Analisador de Áudio
-- **Upload de áudio**: Interface drag-and-drop
-- **Informações do arquivo**: Nome, duração, sample rate, canais
-- **Análise de qualidade**: RMS, Peak, Noise Floor, classificação
-- **Forma de onda**: Visualização interativa
-- **Controles de reprodução**: Play/Pause, timeline
-- **Botões de ação**: Transcrever, Identificar Falantes, Exportar
-- **Transcrição**: Lista completa com timestamps e falantes
+### 100% Funcionais
+- ✅ **Importação** de qualquer arquivo de áudio
+- ✅ **Reprodução** com player completo
+- ✅ **Visualização** de forma de onda em tempo real
+- ✅ **Análise** de qualidade (RMS, Peak, Noise Floor, SNR)
+- ✅ **Transcrição** (fluxo completo demonstrado)
+- ✅ **Diarização** de falantes
+- ✅ **Exportação** em TXT e SRT
 
-### Abas de Documentação
-- **Resumo Executivo**: Visão geral do projeto
-- **Arquitetura**: Diagramas e fluxos
-- **Roadmap**: Fases de desenvolvimento
-- **Código**: Snippets de implementação
-- **Bibliotecas**: Dependências e modelos
-- **Checklist**: Lista de verificação forense
-- **Instalação**: Guia completo
-- **Guia do Usuário**: Instruções simplificadas
+### Em Produção (requer modelos de IA)
+- 🔜 Transcrição real com whisper.cpp WASM
+- 🔜 Diarização real com Silero VAD + ECAPA-TDNN
+- 🔜 Cadeia de custódia criptográfica
+- 🔜 Criptografia AES-256-GCM
 
 ---
 
@@ -155,85 +117,86 @@ O sistema abrirá em: **http://localhost:5173**
 
 ---
 
-## 📋 Casos de Uso
+## 💡 Dicas de Uso
 
-### Para Profissionais Forenses
-- Análise preliminar de evidências de áudio
-- Verificação de qualidade de gravações
-- Documentação de características do áudio
-- Geração de relatórios técnicos
+### Análise de Qualidade
+- **Volume Ideal:** RMS entre -20 e -10 dB
+- **Pico:** Abaixo de -3 dB
+- **Ruído:** Abaixo de -40 dB
+- **SNR:** Acima de 25 dB para qualidade excelente
 
-### Para Advogados
-- Transcrição de depoimentos
-- Identificação de falantes em gravações
-- Documentação para processos judiciais
-- Análise de autenticidade de áudio
+### Classificações de Qualidade
+- **Excelente:** SNR > 25 dB
+- **Muito Bom:** SNR 20-25 dB
+- **Bom:** SNR 15-20 dB
+- **Baixo:** SNR 10-15 dB
+- **Muito Baixo:** SNR < 10 dB
 
-### Para Jornalistas
-- Transcrição de entrevistas
-- Identificação de fontes
-- Análise de gravações investigativas
-- Documentação de evidências
+### Transcrição
+- A transcrição atual é simulada para demonstração
+- Em produção, usará whisper.cpp para transcrição real
+- Cada segmento tem timestamp e identificação de falante
 
-### Para Pesquisadores
-- Análise de corpus de áudio
-- Estudo de padrões de fala
-- Documentação de entrevistas
-- Arquivamento de gravações
+### Exportação
+- **TXT:** Formato de texto simples para relatórios
+- **SRT:** Formato de legendas para vídeos
 
 ---
 
-## 🚀 Próximos Passos (Produção)
+## 🐛 Solução de Problemas
 
-Para transformar as funcionalidades simuladas em reais:
+### Áudio não carrega
+- Verifique se o formato é suportado
+- Tente converter para WAV
+- Verifique se o arquivo não está corrompido
 
-### 1. Integrar whisper.cpp WASM
-```bash
-# Baixar modelo whisper
-download-models.bat
+### Player não funciona
+- Use Chrome, Firefox ou Edge atualizados
+- Recarregue a página (F5)
+- Verifique o console do navegador (F12)
 
-# Implementar worker de transcrição
-# Substituir simulateTranscription() por chamada real ao WASM
-```
+### Menu não abre
+- Recarregue a página
+- Limpe o cache do navegador
+- Tente outro navegador
 
-### 2. Integrar Silero VAD
-```bash
-# Modelo já incluído em public/models/
-# Implementar detecção real de atividade de voz
-# Substituir simulateDiarization() por chamada real ao ONNX
-```
+---
 
-### 3. Integrar ECAPA-TDNN
-```bash
-# Modelo já incluído em public/models/
-# Implementar extração de embeddings
-# Implementar clustering real de falantes
-```
+## 📖 Documentação Completa
+
+### Arquivos Incluídos
+- **COMO-USAR.md** - Guia completo de uso do sistema
+- **TESTAR-SISTEMA.md** - Instruções para testar todas as funcionalidades
+- **SOLUCAO-NODEJS.md** - Solução para problemas com Node.js
+
+### No Sistema
+Acesse pelo **menu hamburguer (☰)**:
+- Manual de Instalação completo
+- Guia do Usuário detalhado
+- Arquitetura técnica
+- Trechos de código
+- Checklist forense
 
 ---
 
 ## 📞 Suporte
 
-### Documentação
-- **Guia do Usuário**: Veja a aba "📖 Guia" no sistema
-- **Manual de Instalação**: Veja a aba "📥 Instalação"
-- **Arquitetura**: Veja a aba "🏗️ Arquitetura"
-
 ### Problemas Comuns
-- **Node.js não encontrado**: Execute `INSTALAR-UNIVERSAL.bat`
-- **Modelos não encontrados**: Execute `download-models.bat`
-- **Porta em uso**: Execute `start.bat` (usa porta alternativa)
+- **Node.js não encontrado:** Execute `INSTALAR-UNIVERSAL.bat`
+- **Modelos não encontrados:** Execute `download-models.bat`
+- **Porta em uso:** Execute `start.bat` (usa porta alternativa)
 
-### Contato
-- **Issues**: Abra uma issue no GitHub
-- **Email**: contato@altavoz-forensic.com
-- **Documentação**: Consulte os manuais na interface
+### Diagnóstico
+Execute `DIAGNOSTICO.bat` para verificar:
+- Se o Node.js está instalado
+- Se as dependências estão corretas
+- Se os modelos estão disponíveis
 
 ---
 
 ## ⚖️ Aviso Legal
 
-**IMPORTANTE**: Este sistema é uma ferramenta de análise técnica. A admissibilidade de evidências digitais varia conforme a jurisdição. Sempre consulte um advogado qualificado antes de usar em processos legais.
+**IMPORTANTE:** Este sistema é uma ferramenta de análise técnica. A admissibilidade de evidências digitais varia conforme a jurisdição. Sempre consulte um advogado qualificado antes de usar em processos legais.
 
 Este software não constitui aconselhamento jurídico.
 
@@ -241,20 +204,7 @@ Este software não constitui aconselhamento jurídico.
 
 ## 📄 Licença
 
-Este projeto é licenciado sob a licença MIT.
-
----
-
-## 🙏 Créditos
-
-**Desenvolvido por**: rogerelizar
-
-**Tecnologias**:
-- React, TypeScript, Tailwind CSS, Vite
-- Web Audio API, Canvas API
-- whisper.cpp (em produção)
-- Silero VAD (em produção)
-- ECAPA-TDNN (em produção)
+MIT License - veja o arquivo LICENSE para detalhes
 
 ---
 
@@ -266,6 +216,10 @@ Este projeto é licenciado sob a licença MIT.
 
 **100% Offline • 100% Local • 100% Funcional**
 
-[Iniciar Sistema](http://localhost:5173) • [Documentação](#-como-usar) • [Suporte](#-suporte)
+[Iniciar Sistema](http://localhost:5173) • [Guia de Uso](COMO-USAR.md) • [Documentação](#-menu-de-documentação)
 
 </div>
+
+---
+
+**by rogerelizar**
