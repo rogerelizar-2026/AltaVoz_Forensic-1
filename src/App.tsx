@@ -9,12 +9,12 @@ import { Architecture } from './components/Architecture';
 type TabId = 'summary' | 'architecture' | 'roadmap' | 'code' | 'libraries' | 'checklist';
 
 const tabs: { id: TabId; label: string; icon: string }[] = [
-  { id: 'summary', label: 'Executive Summary', icon: '📋' },
-  { id: 'architecture', label: 'Architecture', icon: '🏗️' },
+  { id: 'summary', label: 'Resumo Executivo', icon: '📋' },
+  { id: 'architecture', label: 'Arquitetura', icon: '🏗️' },
   { id: 'roadmap', label: 'Roadmap', icon: '🗺️' },
-  { id: 'code', label: 'Code Snippets', icon: '💻' },
-  { id: 'libraries', label: 'Libraries & Models', icon: '📦' },
-  { id: 'checklist', label: 'Forensic Checklist', icon: '✅' },
+  { id: 'code', label: 'Trechos de Código', icon: '💻' },
+  { id: 'libraries', label: 'Bibliotecas e Modelos', icon: '📦' },
+  { id: 'checklist', label: 'Checklist Forense', icon: '✅' },
 ];
 
 export default function App() {
@@ -31,7 +31,7 @@ export default function App() {
             </div>
             <div>
               <h1 className="text-lg font-bold text-white">AltaVoz Forensic-1</h1>
-              <p className="text-xs text-gray-400">Architecture & Implementation Reference — Court-Grade Audio Intelligence</p>
+              <p className="text-xs text-gray-400">Referência de Arquitetura e Implementação — Inteligência de Áudio de Grau Forense</p>
             </div>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-500">
-              AltaVoz Forensic-1 — Zero-egress, offline-first, court-grade audio intelligence.
+              AltaVoz Forensic-1 — Zero-egress, offline-first, inteligência de áudio de grau forense.
             </p>
             <div className="flex gap-4 text-xs text-gray-600">
               <span>TypeScript 5.x Strict</span>
@@ -93,10 +93,13 @@ export default function App() {
           </div>
           <div className="mt-4 p-3 rounded-lg bg-amber-900/20 border border-amber-800/30">
             <p className="text-xs text-amber-300/80">
-              <strong>Disclaimer:</strong> This document provides technical architecture guidance only. 
-              Admissibility of digital evidence varies by jurisdiction. Legal review by qualified counsel 
-              is required before deployment in any legal proceeding. This is not legal advice.
+              <strong>Aviso:</strong> Este documento fornece apenas orientação técnica de arquitetura. 
+              A admissibilidade de evidências digitais varia conforme a jurisdição. Revisão jurídica por 
+              counsel qualificado é necessária antes da implantação em qualquer processo legal. Isto não constitui aconselhamento jurídico.
             </p>
+          </div>
+          <div className="mt-4 text-center">
+            <p className="text-sm text-gray-400 font-medium">by rogerelizar</p>
           </div>
         </div>
       </footer>

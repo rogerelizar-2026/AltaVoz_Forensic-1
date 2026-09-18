@@ -17,10 +17,10 @@ const code = (strings: TemplateStringsArray, ...values: unknown[]): string => {
 export const codeSnippets: CodeSnippet[] = [
   {
     id: "webcrypto-init",
-    title: "WebCrypto AES-GCM Initialization & Key Derivation",
-    description: "AES-256-GCM encryption with Argon2id-derived keys via WebCrypto. Uses 256-bit key, 96-bit IV (never reused), and authenticated additional data (AAD) binding metadata to ciphertext.",
+    title: "Inicialização WebCrypto AES-GCM e Derivação de Chave",
+    description: "Criptografia AES-256-GCM com chaves derivadas via Argon2id pelo WebCrypto. Usa chave de 256-bit, IV de 96-bit (nunca reutilizado) e dados adicionais autenticados (AAD) vinculando metadados ao texto cifrado.",
     language: "typescript",
-    pillar: "Cryptographic & Integrity",
+    pillar: "Criptográfica e Integridade",
     code: [
       '// crypto/encryption.ts',
       '// WebCrypto AES-GCM with Argon2id key derivation',
@@ -138,10 +138,10 @@ export const codeSnippets: CodeSnippet[] = [
   },
   {
     id: "hash-chain-worker",
-    title: "Web Worker Hash-Chain Generation",
-    description: "Non-blocking SHA-256 hash-chain with HMAC-SHA256 Merkle tree computation for operator actions. Runs entirely in a Web Worker to avoid blocking the main thread during large audio imports.",
+    title: "Geração de Cadeia de Hash em Web Worker",
+    description: "Cadeia de hash SHA-256 não-bloqueante com computação de árvore Merkle HMAC-SHA256 para ações do operador. Executa inteiramente em Web Worker para evitar bloqueio da thread principal durante importações de áudio grandes.",
     language: "typescript",
-    pillar: "Cryptographic & Integrity",
+    pillar: "Criptográfica e Integridade",
     code: [
       '// workers/hashChain.worker.ts',
       '// Message contract for hash-chain worker',
@@ -243,10 +243,10 @@ export const codeSnippets: CodeSnippet[] = [
   },
   {
     id: "onnx-silero-vad",
-    title: "ONNX Runtime Web — Silero VAD Initialization",
-    description: "Silero VAD model loading via ONNX Runtime Web with WASM backend. Processes audio in 512-sample frames at 16kHz for robust voice activity detection in noisy forensic recordings.",
+    title: "ONNX Runtime Web — Inicialização Silero VAD",
+    description: "Carregamento do modelo Silero VAD via ONNX Runtime Web com backend WASM. Processa áudio em frames de 512 amostras a 16kHz para detecção robusta de atividade de voz em gravações forenses ruidosas.",
     language: "typescript",
-    pillar: "DSP & Diarization",
+    pillar: "DSP e Diarização",
     code: [
       '// dsp/sileroVad.ts',
       '// Silero VAD via ONNX Runtime Web (WASM backend)',
@@ -378,10 +378,10 @@ export const codeSnippets: CodeSnippet[] = [
   },
   {
     id: "onnx-ecapa-tdnn",
-    title: "ONNX Runtime Web — ECAPA-TDNN Speaker Embeddings",
-    description: "Speaker embedding extraction using ECAPA-TDNN via ONNX Runtime Web. Produces 192-dimensional embeddings for each detected speech segment, enabling channel-agnostic diarization with agglomerative clustering.",
+    title: "ONNX Runtime Web — Embeddings de Falantes ECAPA-TDNN",
+    description: "Extração de embeddings de falantes usando ECAPA-TDNN via ONNX Runtime Web. Produz embeddings de 192 dimensões para cada segmento de fala detectado, permitindo diarização independente de canal com clustering aglomerativo.",
     language: "typescript",
-    pillar: "DSP & Diarization",
+    pillar: "DSP e Diarização",
     code: [
       '// dsp/speakerEmbeddings.ts',
       '// ECAPA-TDNN speaker embeddings via ONNX Runtime Web',
@@ -527,10 +527,10 @@ export const codeSnippets: CodeSnippet[] = [
   },
   {
     id: "whisper-worker",
-    title: "whisper.cpp WASM Worker Integration",
-    description: "Architecture for running whisper.cpp compiled to WebAssembly in a dedicated Web Worker. Includes model loading from IndexedDB, integrity verification, memory management, and fallback strategies.",
+    title: "Integração de Worker WASM whisper.cpp",
+    description: "Arquitetura para executar whisper.cpp compilado para WebAssembly em um Web Worker dedicado. Inclui carregamento de modelo do IndexedDB, verificação de integridade, gerenciamento de memória e estratégias de fallback.",
     language: "typescript",
-    pillar: "Local ASR",
+    pillar: "ASR Local",
     code: [
       '// workers/whisper.worker.ts',
       '// whisper.cpp WASM worker for local ASR',
@@ -710,10 +710,10 @@ export const codeSnippets: CodeSnippet[] = [
   },
   {
     id: "dsp-filters",
-    title: "Forensic DSP Filters — Noise Reduction & Speech Enhancement",
-    description: "Non-destructive forensic DSP processing chain. Spectral noise reduction (Wiener filtering), speech-intelligibility EQ (biquad cascade), with full audit logging. Distinguishes investigative enhancement from evidence alteration.",
+    title: "Filtros DSP Forense — Redução de Ruído e Aprimoramento de Fala",
+    description: "Cadeia de processamento DSP forense não-destrutiva. Redução de ruído espectral (filtragem Wiener), EQ de inteligibilidade de fala (cascata biquad), com log de auditoria completo. Distingue aprimoramento investigativo de alteração de evidência.",
     language: "typescript",
-    pillar: "DSP & Diarization",
+    pillar: "DSP e Diarização",
     code: [
       '// dsp/forensicFilters.ts',
       '// Non-destructive forensic DSP processing chain',
@@ -928,10 +928,10 @@ export const codeSnippets: CodeSnippet[] = [
   },
   {
     id: "chain-of-custody",
-    title: "Chain of Custody — Immutable Evidence Ledger",
-    description: "Cryptographic chain-of-custody implementation ensuring original evidence files remain immutable. All derivatives are tagged, hashed, and linked in an append-only audit log with HMAC signatures.",
+    title: "Cadeia de Custódia — Ledger de Evidências Imutável",
+    description: "Implementação de cadeia de custódia criptográfica garantindo que arquivos de evidência originais permaneçam imutáveis. Todos os derivados são marcados, hasheados e vinculados em um log de auditoria somente-acréscimo com assinaturas HMAC.",
     language: "typescript",
-    pillar: "Cryptographic & Integrity",
+    pillar: "Criptográfica e Integridade",
     code: [
       '// forensics/chainOfCustody.ts',
       '// Immutable evidence ledger with cryptographic provenance',
@@ -1101,10 +1101,10 @@ export const codeSnippets: CodeSnippet[] = [
   },
   {
     id: "model-integrity",
-    title: "Model Download & Integrity Verification",
-    description: "Secure model provisioning: download-time network access is permitted, but runtime evidence processing is fully offline. Models stored in IndexedDB with SHA-256 integrity verification.",
+    title: "Download de Modelo e Verificação de Integridade",
+    description: "Provisionamento seguro de modelos: acesso à rede no momento do download é permitido, mas o processamento de evidências em tempo de execução é totalmente offline. Modelos armazenados no IndexedDB com verificação de integridade SHA-256.",
     language: "typescript",
-    pillar: "Local ASR",
+    pillar: "ASR Local",
     code: [
       '// services/modelManager.ts',
       '// Model provisioning with integrity verification',

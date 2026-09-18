@@ -14,18 +14,16 @@ export function CodeSnippets() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const pillars = [...new Set(codeSnippets.map(s => s.pillar))];
-
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-white mb-2">Code Snippets</h2>
+        <h2 className="text-2xl font-bold text-white mb-2">Trechos de Código</h2>
         <p className="text-gray-400 text-sm">
-          Critical implementation examples for each pillar. All code is TypeScript 5.x strict mode.
+          Exemplos críticos de implementação para cada pilar. Todo o código é TypeScript 5.x strict mode.
         </p>
       </div>
 
-      {/* Pillar Filter */}
+      {/* Filtro de Pilares */}
       <div className="flex flex-wrap gap-2">
         {codeSnippets.map((s) => (
           <button
@@ -42,7 +40,7 @@ export function CodeSnippets() {
         ))}
       </div>
 
-      {/* Snippet Detail */}
+      {/* Detalhe do Trecho */}
       <div className="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
         <div className="p-4 border-b border-gray-800 flex items-center justify-between">
           <div>
@@ -56,7 +54,7 @@ export function CodeSnippets() {
             onClick={handleCopy}
             className="px-3 py-1.5 rounded-lg bg-gray-800 text-gray-300 text-xs hover:bg-gray-700 transition-colors"
           >
-            {copied ? '✓ Copied' : 'Copy'}
+            {copied ? '✓ Copiado' : 'Copiar'}
           </button>
         </div>
 
@@ -86,17 +84,17 @@ export function CodeSnippets() {
         </div>
       </div>
 
-      {/* All Snippets Index */}
+      {/* Índice de Todos os Trechos */}
       <div className="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
         <div className="p-4 border-b border-gray-800">
-          <h3 className="font-semibold text-white">All Snippets Index</h3>
+          <h3 className="font-semibold text-white">Índice de Todos os Trechos</h3>
         </div>
         <div className="divide-y divide-gray-800">
           {codeSnippets.map((s) => (
             <button
               key={s.id}
               onClick={() => setActiveSnippet(s.id)}
-              className={`w-full text-left p-4 hover:bg-gray-800/50 transition-colors ${
+              className={`w-full text-left p-4 hover:bg-gray-800/30 transition-colors ${
                 activeSnippet === s.id ? 'bg-gray-800/30' : ''
               }`}
             >

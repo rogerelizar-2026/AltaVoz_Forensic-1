@@ -9,61 +9,61 @@ interface ChecklistItem {
 }
 
 const checklistItems: ChecklistItem[] = [
-  // Unit Tests
-  { id: 'ut-1', text: 'AES-GCM encrypt/decrypt round-trip with known test vectors', category: 'Unit Tests', priority: 'critical' },
-  { id: 'ut-2', text: 'Argon2id produces deterministic output for fixed inputs', category: 'Unit Tests', priority: 'critical' },
-  { id: 'ut-3', text: 'Hash chain verification detects single-bit tampering', category: 'Unit Tests', priority: 'critical' },
-  { id: 'ut-4', text: 'Merkle tree root matches known-good computation', category: 'Unit Tests', priority: 'critical' },
-  { id: 'ut-5', text: 'HMAC signature verification for custody events', category: 'Unit Tests', priority: 'critical' },
-  { id: 'ut-6', text: 'Silero VAD output matches reference implementation on test audio', category: 'Unit Tests', priority: 'high' },
-  { id: 'ut-7', text: 'Speaker embeddings are L2-normalized and dimensionally correct (192-d)', category: 'Unit Tests', priority: 'high' },
-  { id: 'ut-8', text: 'Biquad filter coefficients match AudioEQ Cookbook formulas', category: 'Unit Tests', priority: 'high' },
-  { id: 'ut-9', text: 'Spectral noise reduction output hash is deterministic for same input', category: 'Unit Tests', priority: 'high' },
-  { id: 'ut-10', text: 'Model SHA-256 verification rejects corrupted downloads', category: 'Unit Tests', priority: 'critical' },
+  // Testes Unitários
+  { id: 'ut-1', text: 'Round-trip de criptografia/descriptografia AES-GCM com vetores de teste conhecidos', category: 'Testes Unitários', priority: 'critical' },
+  { id: 'ut-2', text: 'Argon2id produz saída determinística para entradas fixas', category: 'Testes Unitários', priority: 'critical' },
+  { id: 'ut-3', text: 'Verificação de cadeia de hash detecta violação de um único bit', category: 'Testes Unitários', priority: 'critical' },
+  { id: 'ut-4', text: 'Raiz da árvore Merkle corresponde à computação de referência conhecida', category: 'Testes Unitários', priority: 'critical' },
+  { id: 'ut-5', text: 'Verificação de assinatura HMAC para eventos de custódia', category: 'Testes Unitários', priority: 'critical' },
+  { id: 'ut-6', text: 'Saída do Silero VAD corresponde à implementação de referência em áudio de teste', category: 'Testes Unitários', priority: 'high' },
+  { id: 'ut-7', text: 'Embeddings de falantes são normalizados L2 e dimensionalmente corretos (192-d)', category: 'Testes Unitários', priority: 'high' },
+  { id: 'ut-8', text: 'Coeficientes de filtro biquad correspondem às fórmulas do AudioEQ Cookbook', category: 'Testes Unitários', priority: 'high' },
+  { id: 'ut-9', text: 'Hash de saída da redução de ruído espectral é determinístico para mesma entrada', category: 'Testes Unitários', priority: 'high' },
+  { id: 'ut-10', text: 'Verificação SHA-256 de modelo rejeita downloads corrompidos', category: 'Testes Unitários', priority: 'critical' },
 
-  // Integration Tests
-  { id: 'it-1', text: 'Full pipeline: Import → Quality → Encrypt → Transcribe → Diarize → Export', category: 'Integration Tests', priority: 'critical' },
-  { id: 'it-2', text: 'Hash chain worker processes 10,000 blocks without blocking main thread', category: 'Integration Tests', priority: 'critical' },
-  { id: 'it-3', text: 'Argon2id derivation completes within 3 seconds on target hardware', category: 'Integration Tests', priority: 'high' },
-  { id: 'it-4', text: 'whisper.cpp worker loads model from IndexedDB and transcribes test audio', category: 'Integration Tests', priority: 'high' },
-  { id: 'it-5', text: 'Custody chain survives browser restart (IndexedDB persistence)', category: 'Integration Tests', priority: 'critical' },
-  { id: 'it-6', text: 'Spectrogram renders correctly for 1-hour audio within memory budget', category: 'Integration Tests', priority: 'medium' },
-  { id: 'it-7', text: 'Export package can be independently verified by third-party tool', category: 'Integration Tests', priority: 'critical' },
+  // Testes de Integração
+  { id: 'it-1', text: 'Pipeline completo: Importar → Qualidade → Criptografar → Transcrever → Diarizar → Exportar', category: 'Testes de Integração', priority: 'critical' },
+  { id: 'it-2', text: 'Worker de cadeia de hash processa 10.000 blocos sem bloquear thread principal', category: 'Testes de Integração', priority: 'critical' },
+  { id: 'it-3', text: 'Derivação de chave Argon2id completa dentro de 3 segundos no hardware alvo', category: 'Testes de Integração', priority: 'high' },
+  { id: 'it-4', text: 'Worker whisper.cpp carrega modelo do IndexedDB e transcreve áudio de teste', category: 'Testes de Integração', priority: 'high' },
+  { id: 'it-5', text: 'Cadeia de custódia sobrevive a reinício do navegador (persistência IndexedDB)', category: 'Testes de Integração', priority: 'critical' },
+  { id: 'it-6', text: 'Espectrograma renderiza corretamente para áudio de 1 hora dentro do orçamento de memória', category: 'Testes de Integração', priority: 'medium' },
+  { id: 'it-7', text: 'Pacote de exportação pode ser verificado independentemente por ferramenta de terceiros', category: 'Testes de Integração', priority: 'critical' },
 
-  // Determinism
-  { id: 'dt-1', text: 'Same audio + same parameters → identical hash chain output', category: 'Determinism', priority: 'critical' },
-  { id: 'dt-2', text: 'Same audio + same DSP parameters → identical output hash', category: 'Determinism', priority: 'critical' },
-  { id: 'dt-3', text: 'Speaker diarization produces consistent clusters across runs', category: 'Determinism', priority: 'high', notes: 'ONNX inference is deterministic with fixed seeds' },
-  { id: 'dt-4', text: 'Transcription output is byte-identical for same model + audio', category: 'Determinism', priority: 'high', notes: 'whisper.cpp with temperature=0 is deterministic' },
-  { id: 'dt-5', text: 'Merkle tree computation is order-dependent and reproducible', category: 'Determinism', priority: 'critical' },
+  // Determinismo
+  { id: 'dt-1', text: 'Mesmo áudio + mesmos parâmetros → saída de cadeia de hash idêntica', category: 'Determinismo', priority: 'critical' },
+  { id: 'dt-2', text: 'Mesmo áudio + mesmos parâmetros DSP → hash de saída idêntico', category: 'Determinismo', priority: 'critical' },
+  { id: 'dt-3', text: 'Diarização de falantes produz clusters consistentes entre execuções', category: 'Determinismo', priority: 'high', notes: 'Inferência ONNX é determinística com sementes fixas' },
+  { id: 'dt-4', text: 'Saída de transcrição é byte-idêntica para mesmo modelo + áudio', category: 'Determinismo', priority: 'high', notes: 'whisper.cpp com temperature=0 é determinístico' },
+  { id: 'dt-5', text: 'Computação de árvore Merkle é dependente de ordem e reproduzível', category: 'Determinismo', priority: 'critical' },
 
-  // Performance
-  { id: 'pf-1', text: 'Import 100MB audio file without UI freeze (hash chain in worker)', category: 'Performance', priority: 'critical' },
-  { id: 'pf-2', text: 'Argon2id key derivation < 5 seconds on mid-range hardware', category: 'Performance', priority: 'high' },
-  { id: 'pf-3', text: 'whisper.cpp transcription of 5-min audio < 60 seconds', category: 'Performance', priority: 'high' },
-  { id: 'pf-4', text: 'Silero VAD processes 1-hour audio < 30 seconds', category: 'Performance', priority: 'medium' },
-  { id: 'pf-5', text: 'Spectrogram computation for 1-hour audio < 10 seconds', category: 'Performance', priority: 'medium' },
-  { id: 'pf-6', text: 'Memory usage stays below 1GB during transcription', category: 'Performance', priority: 'high' },
-  { id: 'pf-7', text: 'No memory leaks after 10 consecutive import-process-export cycles', category: 'Performance', priority: 'high' },
+  // Desempenho
+  { id: 'pf-1', text: 'Importar arquivo de áudio de 100MB sem congelamento da UI (cadeia de hash em worker)', category: 'Desempenho', priority: 'critical' },
+  { id: 'pf-2', text: 'Derivação de chave Argon2id < 5 segundos em hardware de médio desempenho', category: 'Desempenho', priority: 'high' },
+  { id: 'pf-3', text: 'Transcrição whisper.cpp de áudio de 5 min < 60 segundos', category: 'Desempenho', priority: 'high' },
+  { id: 'pf-4', text: 'Silero VAD processa áudio de 1 hora < 30 segundos', category: 'Desempenho', priority: 'medium' },
+  { id: 'pf-5', text: 'Computação de espectrograma para áudio de 1 hora < 10 segundos', category: 'Desempenho', priority: 'medium' },
+  { id: 'pf-6', text: 'Uso de memória permanece abaixo de 1GB durante transcrição', category: 'Desempenho', priority: 'high' },
+  { id: 'pf-7', text: 'Sem vazamentos de memória após 10 ciclos consecutivos de importar-processar-exportar', category: 'Desempenho', priority: 'high' },
 
-  // Security
-  { id: 'sc-1', text: 'Encryption keys are non-extractable (CryptoKey.extractable === false)', category: 'Security', priority: 'critical' },
-  { id: 'sc-2', text: 'IV/nonce is never reused (tracked per session)', category: 'Security', priority: 'critical' },
-  { id: 'sc-3', text: 'Key material is zeroized on session end', category: 'Security', priority: 'critical' },
-  { id: 'sc-4', text: 'No network requests during evidence processing (verify via DevTools)', category: 'Security', priority: 'critical' },
-  { id: 'sc-5', text: 'Model files verified against hardcoded SHA-256 before use', category: 'Security', priority: 'critical' },
-  { id: 'sc-6', text: 'CSP headers prevent inline script execution', category: 'Security', priority: 'high' },
-  { id: 'sc-7', text: 'No telemetry, analytics, or error reporting to external services', category: 'Security', priority: 'critical' },
-  { id: 'sc-8', text: 'Passphrase never stored or logged in plaintext', category: 'Security', priority: 'critical' },
+  // Segurança
+  { id: 'sc-1', text: 'Chaves de criptografia são não-extraíveis (CryptoKey.extractable === false)', category: 'Segurança', priority: 'critical' },
+  { id: 'sc-2', text: 'IV/nonce nunca é reutilizado (rastreado por sessão)', category: 'Segurança', priority: 'critical' },
+  { id: 'sc-3', text: 'Material de chave é zeroizado no fim da sessão', category: 'Segurança', priority: 'critical' },
+  { id: 'sc-4', text: 'Nenhuma requisição de rede durante processamento de evidências (verificar via DevTools)', category: 'Segurança', priority: 'critical' },
+  { id: 'sc-5', text: 'Arquivos de modelo verificados contra SHA-256 codificado antes do uso', category: 'Segurança', priority: 'critical' },
+  { id: 'sc-6', text: 'Cabeçalhos CSP previnem execução de script inline', category: 'Segurança', priority: 'high' },
+  { id: 'sc-7', text: 'Sem telemetria, analytics ou relatório de erros para serviços externos', category: 'Segurança', priority: 'critical' },
+  { id: 'sc-8', text: 'Passphrase nunca armazenada ou logada em texto plano', category: 'Segurança', priority: 'critical' },
 
-  // Chain of Custody
-  { id: 'cc-1', text: 'Original evidence file hash is computed before any processing', category: 'Chain of Custody', priority: 'critical' },
-  { id: 'cc-2', text: 'Original evidence is never modified (derivatives are separate)', category: 'Chain of Custody', priority: 'critical' },
-  { id: 'cc-3', text: 'Every processing step records input and output hashes', category: 'Chain of Custody', priority: 'critical' },
-  { id: 'cc-4', text: 'Custody chain detects insertion, deletion, or modification of events', category: 'Chain of Custody', priority: 'critical' },
-  { id: 'cc-5', text: 'Export package includes all metadata for independent verification', category: 'Chain of Custody', priority: 'critical' },
-  { id: 'cc-6', text: 'Processing steps classified as INVESTIGATIVE or EVIDENCE_PRESERVING', category: 'Chain of Custody', priority: 'high' },
-  { id: 'cc-7', text: 'Operator identity is cryptographically bound to each custody event', category: 'Chain of Custody', priority: 'critical' },
+  // Cadeia de Custódia
+  { id: 'cc-1', text: 'Hash do arquivo de evidência original é computado antes de qualquer processamento', category: 'Cadeia de Custódia', priority: 'critical' },
+  { id: 'cc-2', text: 'Evidência original nunca é modificada (derivados são separados)', category: 'Cadeia de Custódia', priority: 'critical' },
+  { id: 'cc-3', text: 'Cada etapa de processamento registra hashes de entrada e saída', category: 'Cadeia de Custódia', priority: 'critical' },
+  { id: 'cc-4', text: 'Cadeia de custódia detecta inserção, deleção ou modificação de eventos', category: 'Cadeia de Custódia', priority: 'critical' },
+  { id: 'cc-5', text: 'Pacote de exportação inclui todos os metadados para verificação independente', category: 'Cadeia de Custódia', priority: 'critical' },
+  { id: 'cc-6', text: 'Etapas de processamento classificadas como INVESTIGATIVA ou PRESERVAÇÃO_DE_EVIDÊNCIA', category: 'Cadeia de Custódia', priority: 'high' },
+  { id: 'cc-7', text: 'Identidade do operador é criptograficamente vinculada a cada evento de custódia', category: 'Cadeia de Custódia', priority: 'critical' },
 ];
 
 export function ForensicChecklist() {
@@ -92,17 +92,17 @@ export function ForensicChecklist() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-white mb-2">Forensic Readiness Checklist</h2>
+        <h2 className="text-2xl font-bold text-white mb-2">Checklist de Prontidão Forense</h2>
         <p className="text-gray-400 text-sm">
-          Validation and verification checklist covering unit tests, integration tests, determinism, 
-          performance budgets, security review, and chain-of-custody verification.
+          Checklist de validação e verificação cobrindo testes unitários, testes de integração, determinismo, 
+          orçamentos de desempenho, revisão de segurança e verificação de cadeia de custódia.
         </p>
       </div>
 
-      {/* Progress */}
+      {/* Progresso */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="p-4 rounded-xl bg-gray-900 border border-gray-800">
-          <div className="text-sm text-gray-400 mb-1">Overall Progress</div>
+          <div className="text-sm text-gray-400 mb-1">Progresso Geral</div>
           <div className="text-2xl font-bold text-white">{completionRate}%</div>
           <div className="mt-2 h-2 rounded-full bg-gray-800 overflow-hidden">
             <div 
@@ -110,10 +110,10 @@ export function ForensicChecklist() {
               style={{ width: `${completionRate}%` }}
             />
           </div>
-          <div className="text-xs text-gray-500 mt-1">{checked.size} / {checklistItems.length} items</div>
+          <div className="text-xs text-gray-500 mt-1">{checked.size} / {checklistItems.length} itens</div>
         </div>
         <div className="p-4 rounded-xl bg-gray-900 border border-gray-800">
-          <div className="text-sm text-gray-400 mb-1">Critical Items</div>
+          <div className="text-sm text-gray-400 mb-1">Itens Críticos</div>
           <div className="text-2xl font-bold text-red-400">{criticalDone} / {criticalTotal}</div>
           <div className="mt-2 h-2 rounded-full bg-gray-800 overflow-hidden">
             <div 
@@ -123,7 +123,7 @@ export function ForensicChecklist() {
           </div>
         </div>
         <div className="p-4 rounded-xl bg-gray-900 border border-gray-800">
-          <div className="text-sm text-gray-400 mb-1">Categories</div>
+          <div className="text-sm text-gray-400 mb-1">Categorias</div>
           <div className="text-2xl font-bold text-white">{categories.length}</div>
           <div className="text-xs text-gray-500 mt-1">
             {categories.map(c => {
@@ -135,7 +135,7 @@ export function ForensicChecklist() {
         </div>
       </div>
 
-      {/* Filter */}
+      {/* Filtro */}
       <div className="flex flex-wrap gap-2">
         <button
           onClick={() => setFilter('all')}
@@ -145,7 +145,7 @@ export function ForensicChecklist() {
               : 'text-gray-400 hover:text-gray-200 bg-gray-800/50 border border-gray-700/50'
           }`}
         >
-          All ({checklistItems.length})
+          Todos ({checklistItems.length})
         </button>
         {categories.map(cat => {
           const count = checklistItems.filter(i => i.category === cat).length;
@@ -165,7 +165,7 @@ export function ForensicChecklist() {
         })}
       </div>
 
-      {/* Checklist Items */}
+      {/* Itens do Checklist */}
       <div className="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
         <div className="divide-y divide-gray-800">
           {filteredItems.map((item) => (
@@ -189,7 +189,7 @@ export function ForensicChecklist() {
                     item.priority === 'high' ? 'bg-orange-900/40 text-orange-300' :
                     'bg-yellow-900/40 text-yellow-300'
                   }`}>
-                    {item.priority}
+                    {item.priority === 'critical' ? 'crítico' : item.priority === 'high' ? 'alto' : 'médio'}
                   </span>
                 </div>
                 {item.notes && (
@@ -201,80 +201,80 @@ export function ForensicChecklist() {
         </div>
       </div>
 
-      {/* Testing Strategy */}
+      {/* Estratégia de Testes */}
       <div className="rounded-xl bg-gray-900 border border-gray-800 p-5">
-        <h3 className="font-semibold text-white mb-3">Testing & Validation Strategy</h3>
+        <h3 className="font-semibold text-white mb-3">Estratégia de Testes e Validação</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
           <div>
-            <h4 className="text-emerald-400 font-medium mb-2">Unit Testing</h4>
+            <h4 className="text-emerald-400 font-medium mb-2">Testes Unitários</h4>
             <ul className="space-y-1 text-gray-300">
-              <li>• Vitest for pure functions (crypto, DSP math)</li>
-              <li>• Known test vectors for AES-GCM (NIST)</li>
-              <li>• Argon2 reference outputs from RFC 9106</li>
-              <li>• Snapshot tests for hash chain output</li>
-              <li>• Mock WebCrypto for isolated testing</li>
+              <li>• Vitest para funções puras (cripto, matemática DSP)</li>
+              <li>• Vetores de teste conhecidos para AES-GCM (NIST)</li>
+              <li>• Saídas de referência Argon2 do RFC 9106</li>
+              <li>• Testes de snapshot para saída de cadeia de hash</li>
+              <li>• Mock WebCrypto para testes isolados</li>
             </ul>
           </div>
           <div>
-            <h4 className="text-emerald-400 font-medium mb-2">Integration Testing</h4>
+            <h4 className="text-emerald-400 font-medium mb-2">Testes de Integração</h4>
             <ul className="space-y-1 text-gray-300">
-              <li>• Playwright for full pipeline E2E</li>
-              <li>• Test audio corpus (clean, noisy, multi-speaker)</li>
-              <li>• Worker message contract validation</li>
-              <li>• IndexedDB persistence across sessions</li>
-              <li>• Export package verification by external tool</li>
+              <li>• Playwright para E2E de pipeline completo</li>
+              <li>• Corpus de áudio de teste (limpo, ruidoso, multi-falante)</li>
+              <li>• Validação de contrato de mensagens de worker</li>
+              <li>• Persistência IndexedDB entre sessões</li>
+              <li>• Verificação de pacote de exportação por ferramenta externa</li>
             </ul>
           </div>
           <div>
-            <h4 className="text-emerald-400 font-medium mb-2">Security Review</h4>
+            <h4 className="text-emerald-400 font-medium mb-2">Revisão de Segurança</h4>
             <ul className="space-y-1 text-gray-300">
-              <li>• Static analysis: ESLint security plugin</li>
-              <li>• Dependency audit: npm audit (zero runtime deps)</li>
-              <li>• Network isolation: DevTools verification</li>
-              <li>• Key management: Extractable flag audit</li>
-              <li>• CSP compliance: Report-only mode first</li>
+              <li>• Análise estática: plugin de segurança ESLint</li>
+              <li>• Auditoria de dependências: npm audit (zero deps em runtime)</li>
+              <li>• Isolamento de rede: verificação DevTools</li>
+              <li>• Gerenciamento de chaves: auditoria de flag extractable</li>
+              <li>• Conformidade CSP: modo report-only primeiro</li>
             </ul>
           </div>
           <div>
-            <h4 className="text-emerald-400 font-medium mb-2">Forensic Validation</h4>
+            <h4 className="text-emerald-400 font-medium mb-2">Validação Forense</h4>
             <ul className="space-y-1 text-gray-300">
-              <li>• Chain integrity: Tamper with log, verify detection</li>
-              <li>• Reproducibility: Same input → same output hash</li>
-              <li>• Immutability: Verify original never modified</li>
-              <li>• Expert review: Independent forensic examiner</li>
-              <li>• Legal review: Jurisdiction-specific admissibility</li>
+              <li>• Integridade de cadeia: violar log, verificar detecção</li>
+              <li>• Reprodutibilidade: mesma entrada → mesmo hash de saída</li>
+              <li>• Imutabilidade: verificar que original nunca foi modificado</li>
+              <li>• Revisão por especialista: examinador forense independente</li>
+              <li>• Revisão jurídica: admissibilidade específica por jurisdição</li>
             </ul>
           </div>
         </div>
       </div>
 
-      {/* Open Questions */}
+      {/* Questões Abertas */}
       <div className="rounded-xl bg-amber-900/10 border border-amber-800/30 p-5">
-        <h3 className="font-semibold text-amber-300 mb-3">Open Questions for Legal/Technical Review</h3>
+        <h3 className="font-semibold text-amber-300 mb-3">Questões Abertas para Revisão Jurídica/Técnica</h3>
         <ul className="space-y-2 text-sm text-amber-200/80">
           <li>
-            <strong>1.</strong> Does the cryptographic chain-of-custody meet the specific requirements 
-            of the target jurisdiction's evidence rules? (Varies: US FRE 901, UK CPIA, EU directives)
+            <strong>1.</strong> A cadeia de custódia criptográfica atende aos requisitos específicos 
+            das regras de evidência da jurisdição alvo? (Varia: US FRE 901, UK CPIA, diretivas da UE)
           </li>
           <li>
-            <strong>2.</strong> Is the non-extractable CryptoKey sufficient for key protection, or does 
-            the jurisdiction require HSM-backed key storage?
+            <strong>2.</strong> O CryptoKey não-extraível é suficiente para proteção de chave, ou a 
+            jurisdição requer armazenamento de chave com suporte a HSM?
           </li>
           <li>
-            <strong>3.</strong> Are browser-based WASM computations considered "reproducible" for 
-            forensic purposes, given potential floating-point differences across platforms?
+            <strong>3.</strong> Computações WASM baseadas em navegador são consideradas "reproduzíveis" para 
+            propósitos forenses, dadas potenciais diferenças de ponto flutuante entre plataformas?
           </li>
           <li>
-            <strong>4.</strong> Does the investigative enhancement classification satisfy Daubert/Frye 
-            standards for expert testimony about enhanced audio?
+            <strong>4.</strong> A classificação de aprimoramento investigativo satisfaz os padrões Daubert/Frye 
+            para testemunho de especialista sobre áudio aprimorado?
           </li>
           <li>
-            <strong>5.</strong> What is the acceptable error rate for automated speaker diarization 
-            in the target legal context?
+            <strong>5.</strong> Qual é a taxa de erro aceitável para diarização automatizada de falantes 
+            no contexto legal alvo?
           </li>
           <li>
-            <strong>6.</strong> Should the system produce a machine-readable verification report 
-            (e.g., JSON-LD with W3C provenance ontology) for interoperability?
+            <strong>6.</strong> O sistema deve produzir um relatório de verificação legível por máquina 
+            (ex: JSON-LD com ontologia de proveniência W3C) para interoperabilidade?
           </li>
         </ul>
       </div>
