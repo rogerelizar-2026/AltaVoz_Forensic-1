@@ -1,15 +1,14 @@
 @echo off
 REM ============================================================
-REM AltaVoz Forensic-1 - Instalador Inteligente (Windows)
+REM AltaVoz Forensic-1 - Instalador Unificado (Windows)
 REM ============================================================
-REM Este instalador detecta automaticamente as dependências
-REM e oferece ajuda para instalá-las se necessário
+REM Este é o ÚNICO arquivo que você precisa executar
 REM ============================================================
 
 echo.
 echo ==========================================================
 echo.
-echo     🎙️  AltaVoz Forensic-1 - Instalador Inteligente
+echo     🎙️  AltaVoz Forensic-1 - Instalador
 echo.
 echo ==========================================================
 echo.
@@ -20,6 +19,9 @@ if not exist "package.json" (
     echo.
     echo Este script deve ser executado na pasta raiz do projeto.
     echo Certifique-se de estar na pasta: altavoz-forensic-1\
+    echo.
+    echo Dica: Navegue ate a pasta correta no Prompt de Comando:
+    echo   cd C:\caminho\para\altavoz-forensic-1
     echo.
     pause
     exit /b 1
@@ -82,7 +84,7 @@ if %errorlevel% neq 0 (
         echo ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
         echo.
         echo Pressione qualquer tecla quando terminar de instalar...
-        pause
+        pause >nul
         exit /b 0
     ) else (
         echo.
@@ -204,7 +206,7 @@ echo ━━━━━━━━━━━━━━━━━━━━━━━━━
 echo.
 echo   1. BAIXAR MODELOS DE IA (necessario para funcionar)
 echo.
-echo      Execute o script:
+echo      Execute o arquivo:
 echo        download-models.bat
 echo.
 echo   2. INICIAR O PROGRAMA

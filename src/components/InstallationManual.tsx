@@ -39,31 +39,38 @@ export function InstallationManual() {
       {/* Instalação Rápida */}
       <div className="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
         <div className="p-4 border-b border-gray-800 bg-emerald-900/10">
-          <h3 className="font-semibold text-emerald-400">⚡ Instalação Rápida (Recomendado)</h3>
+          <h3 className="font-semibold text-emerald-400">⚡ Instalação Rápida (3 Passos)</h3>
         </div>
         <div className="p-5 space-y-4">
           <div className="text-sm text-gray-300">
-            <p className="mb-3">Para a maioria dos usuários, a instalação rápida é a melhor opção:</p>
+            <p className="mb-3">Para a maioria dos usuários, a instalação é simples e direta:</p>
           </div>
           
           <div className="bg-gray-950 rounded-lg p-4 border border-gray-800">
-            <div className="text-xs text-gray-500 mb-2">Terminal / Prompt de Comando</div>
+            <div className="text-xs text-gray-500 mb-2">Windows</div>
             <code className="text-emerald-400 text-sm block">
-              git clone https://github.com/seu-usuario/altavoz-forensic-1.git<br/>
-              cd altavoz-forensic-1<br/>
-              npm install<br/>
-              npm run setup<br/>
-              npm run dev
+              1. install.bat<br/>
+              2. download-models.bat<br/>
+              3. start.bat
+            </code>
+          </div>
+
+          <div className="bg-gray-950 rounded-lg p-4 border border-gray-800">
+            <div className="text-xs text-gray-500 mb-2">Linux / macOS</div>
+            <code className="text-emerald-400 text-sm block">
+              1. chmod +x install.sh && ./install.sh<br/>
+              2. chmod +x download-models.sh && ./download-models.sh<br/>
+              3. chmod +x start.sh && ./start.sh
             </code>
           </div>
 
           <div className="text-sm text-gray-300">
-            <p>O comando <code className="bg-gray-800 px-1 rounded">npm run setup</code> irá automaticamente:</p>
+            <p>O instalador irá automaticamente:</p>
             <ul className="list-disc list-inside ml-4 mt-2 space-y-1 text-gray-400">
-              <li>Verificar todas as dependências do sistema</li>
-              <li>Baixar e configurar os modelos de IA necessários</li>
+              <li>Verificar e instalar o Node.js (se necessário)</li>
+              <li>Instalar todas as dependências do projeto</li>
+              <li>Criar a estrutura de diretórios necessária</li>
               <li>Configurar o ambiente de desenvolvimento</li>
-              <li>Executar testes de validação</li>
             </ul>
           </div>
         </div>
@@ -211,8 +218,8 @@ export function InstallationManual() {
         <div className="space-y-4 text-sm">
           
           <div className="p-3 rounded-lg bg-yellow-900/10 border border-yellow-800/20">
-            <p className="text-yellow-400 font-medium mb-1">Erro: "npm: command not found"</p>
-            <p className="text-gray-300">Node.js não está instalado ou não está no PATH. Reinstale o Node.js e reinicie o terminal.</p>
+            <p className="text-yellow-400 font-medium mb-1">Erro: "Node.js não encontrado"</p>
+            <p className="text-gray-300">Execute o instalador (<code className="bg-gray-800 px-1 rounded text-xs">install.bat</code> ou <code className="bg-gray-800 px-1 rounded text-xs">./install.sh</code>). Ele vai abrir o site do Node.js automaticamente e guiar você na instalação.</p>
           </div>
 
           <div className="p-3 rounded-lg bg-yellow-900/10 border border-yellow-800/20">
@@ -222,13 +229,13 @@ export function InstallationManual() {
           </div>
 
           <div className="p-3 rounded-lg bg-yellow-900/10 border border-yellow-800/20">
-            <p className="text-yellow-400 font-medium mb-1">Erro: "Model not found"</p>
+            <p className="text-yellow-400 font-medium mb-1">Erro: "Modelos não encontrados"</p>
             <p className="text-gray-300">Os modelos de IA não foram baixados. Execute:</p>
-            <code className="text-emerald-400 text-xs block mt-2">npm run download-models</code>
+            <code className="text-emerald-400 text-xs block mt-2">download-models.bat (Windows) ou ./download-models.sh (Linux/macOS)</code>
           </div>
 
           <div className="p-3 rounded-lg bg-yellow-900/10 border border-yellow-800/20">
-            <p className="text-yellow-400 font-medium mb-1">Erro: "Port 5173 already in use"</p>
+            <p className="text-yellow-400 font-medium mb-1">Erro: "Porta 5173 já está em uso"</p>
             <p className="text-gray-300">Outra aplicação está usando a porta 5173. Execute:</p>
             <code className="text-emerald-400 text-xs block mt-2">npm run dev -- --port 3000</code>
           </div>
@@ -238,54 +245,59 @@ export function InstallationManual() {
             <p className="text-gray-300">Seu navegador não suporta SharedArrayBuffer. Use Chrome/Edge 92+ ou Firefox 79+ com os cabeçalhos COOP/COEP configurados no servidor.</p>
           </div>
 
+          <div className="p-3 rounded-lg bg-blue-900/10 border border-blue-800/20">
+            <p className="text-blue-400 font-medium mb-1">Verificação Completa</p>
+            <p className="text-gray-300">Para verificar se tudo está instalado corretamente, execute:</p>
+            <code className="text-emerald-400 text-xs block mt-2">verify.bat (Windows) ou ./verify.sh (Linux/macOS)</code>
+          </div>
+
         </div>
       </div>
 
-      {/* Comandos Úteis */}
+      {/* Scripts Disponíveis */}
       <div className="rounded-xl bg-gray-900 border border-gray-800 overflow-hidden">
         <div className="p-4 border-b border-gray-800">
-          <h3 className="font-semibold text-white">Comandos Úteis</h3>
+          <h3 className="font-semibold text-white">Scripts Disponíveis</h3>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-gray-800">
-                <th className="text-left p-3 text-gray-400">Comando</th>
-                <th className="text-left p-3 text-gray-400">Descrição</th>
+                <th className="text-left p-3 text-gray-400">Script</th>
+                <th className="text-left p-3 text-gray-400">Função</th>
+                <th className="text-left p-3 text-gray-400">Quando Usar</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-800">
               <tr>
+                <td className="p-3"><code className="text-emerald-400 text-xs">install.bat / install.sh</code></td>
+                <td className="p-3 text-gray-300">Instalação completa</td>
+                <td className="p-3 text-gray-400">Primeira vez</td>
+              </tr>
+              <tr>
+                <td className="p-3"><code className="text-emerald-400 text-xs">download-models.bat / .sh</code></td>
+                <td className="p-3 text-gray-300">Baixar modelos de IA</td>
+                <td className="p-3 text-gray-400">Após instalação</td>
+              </tr>
+              <tr>
+                <td className="p-3"><code className="text-emerald-400 text-xs">start.bat / start.sh</code></td>
+                <td className="p-3 text-gray-300">Iniciar o programa</td>
+                <td className="p-3 text-gray-400">Uso diário</td>
+              </tr>
+              <tr>
+                <td className="p-3"><code className="text-emerald-400 text-xs">verify.bat / verify.sh</code></td>
+                <td className="p-3 text-gray-300">Verificar instalação</td>
+                <td className="p-3 text-gray-400">Solução de problemas</td>
+              </tr>
+              <tr>
                 <td className="p-3"><code className="text-emerald-400 text-xs">npm run dev</code></td>
                 <td className="p-3 text-gray-300">Inicia o servidor de desenvolvimento</td>
+                <td className="p-3 text-gray-400">Alternativa ao start</td>
               </tr>
               <tr>
                 <td className="p-3"><code className="text-emerald-400 text-xs">npm run build</code></td>
-                <td className="p-3 text-gray-300">Cria build de produção otimizado</td>
-              </tr>
-              <tr>
-                <td className="p-3"><code className="text-emerald-400 text-xs">npm run preview</code></td>
-                <td className="p-3 text-gray-300">Visualiza o build de produção localmente</td>
-              </tr>
-              <tr>
-                <td className="p-3"><code className="text-emerald-400 text-xs">npm run setup</code></td>
-                <td className="p-3 text-gray-300">Configuração completa automática</td>
-              </tr>
-              <tr>
-                <td className="p-3"><code className="text-emerald-400 text-xs">npm run download-models</code></td>
-                <td className="p-3 text-gray-300">Baixa modelos de IA necessários</td>
-              </tr>
-              <tr>
-                <td className="p-3"><code className="text-emerald-400 text-xs">npm run test</code></td>
-                <td className="p-3 text-gray-300">Executa todos os testes</td>
-              </tr>
-              <tr>
-                <td className="p-3"><code className="text-emerald-400 text-xs">npm run lint</code></td>
-                <td className="p-3 text-gray-300">Verifica qualidade do código</td>
-              </tr>
-              <tr>
-                <td className="p-3"><code className="text-emerald-400 text-xs">npm run typecheck</code></td>
-                <td className="p-3 text-gray-300">Verifica tipos TypeScript</td>
+                <td className="p-3 text-gray-300">Cria build de produção</td>
+                <td className="p-3 text-gray-400">Para deploy</td>
               </tr>
             </tbody>
           </table>
