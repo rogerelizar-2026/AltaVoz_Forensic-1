@@ -4,7 +4,10 @@
 
 Este não é apenas um projeto de documentação. É um **sistema funcional completo** de análise forense de áudio que roda 100% no navegador.
 
----
+**Solução:**
+```bash
+# Windows
+download-models.bat
 
 ## 🚀 Funcionalidades Implementadas
 
