@@ -5,8 +5,10 @@ import { CodeSnippets } from './components/CodeSnippets';
 import { LibraryRecommendations } from './components/LibraryRecommendations';
 import { ForensicChecklist } from './components/ForensicChecklist';
 import { Architecture } from './components/Architecture';
+import { InstallationManual } from './components/InstallationManual';
+import { UserGuide } from './components/UserGuide';
 
-type TabId = 'summary' | 'architecture' | 'roadmap' | 'code' | 'libraries' | 'checklist';
+type TabId = 'summary' | 'architecture' | 'roadmap' | 'code' | 'libraries' | 'checklist' | 'installation' | 'userguide';
 
 const tabs: { id: TabId; label: string; icon: string }[] = [
   { id: 'summary', label: 'Resumo Executivo', icon: '📋' },
@@ -15,6 +17,8 @@ const tabs: { id: TabId; label: string; icon: string }[] = [
   { id: 'code', label: 'Trechos de Código', icon: '💻' },
   { id: 'libraries', label: 'Bibliotecas e Modelos', icon: '📦' },
   { id: 'checklist', label: 'Checklist Forense', icon: '✅' },
+  { id: 'installation', label: 'Manual de Instalação', icon: '📥' },
+  { id: 'userguide', label: 'Guia do Usuário', icon: '📖' },
 ];
 
 export default function App() {
@@ -71,6 +75,8 @@ export default function App() {
           {activeTab === 'code' && <CodeSnippets />}
           {activeTab === 'libraries' && <LibraryRecommendations />}
           {activeTab === 'checklist' && <ForensicChecklist />}
+          {activeTab === 'installation' && <InstallationManual />}
+          {activeTab === 'userguide' && <UserGuide />}
         </div>
       </main>
 
