@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AltaVoz Forensic-1 - Guia de Instalação</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            color: #10b981;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #a0a0a0;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        
+        .problem-box {
+            background: rgba(239, 68, 68, 0.1);
+            border: 2px solid #ef4444;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .problem-box h2 {
+            color: #ef4444;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .solution-box {
+            background: rgba(16, 185, 129, 0.1);
+            border: 2px solid #10b981;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .solution-box h2 {
+            color: #10b981;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .step {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #10b981;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .step h3 {
+            display: inline-block;
+            color: #10b981;
+            margin-bottom: 10px;
+        }
+        
+        .step p {
+            margin-left: 50px;
+            line-height: 1.6;
+        }
+        
+        code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            color: #10b981;
+        }
+        
+        .code-block {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            color: #10b981;
+            overflow-x: auto;
+        }
+        
+        .warning {
+            background: rgba(251, 191, 36, 0.1);
+            border: 2px solid #fbbf24;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .warning h3 {
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+        
+        .success {
+            background: rgba(16, 185, 129, 0.1);
+            border: 2px solid #10b981;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .success h3 {
+            color: #10b981;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .file-list {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .file-list div {
+            padding: 5px 0;
+        }
+        
+        .file {
+            color: #10b981;
+        }
+        
+        .folder {
+            color: #3b82f6;
+        }
+        
+        .button {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .button:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a0a0a0;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎙️ AltaVoz Forensic-1</h1>
+        <p class="subtitle">Guia de Instalação - Solução de Problemas</p>
+        
+        <div class="problem-box">
+            <h2>❌ Problema Encontrado</h2>
+            <p><strong>Erro:</strong> "Arquivo package.json não encontrado!"</p>
+            <p style="margin-top: 10px;">Isso significa que o instalador está sendo executado na pasta errada.</p>
+        </div>
+        
+        <div class="solution-box">
+            <h2>✅ Solução em 3 Passos</h2>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <h3>Localizar a pasta do projeto</h3>
+                <p>Abra o <strong>Windows Explorer</strong> e procure a pasta onde você baixou o projeto. Ela deve ter estes arquivos:</p>
+                <div class="file-list">
+                    <div class="folder">📁 altavoz-forensic-1/</div>
+                    <div class="file">&nbsp;&nbsp;&nbsp;📄 package.json &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← ESTE ARQUIVO DEVE EXISTIR</div>
+                    <div class="file">&nbsp;&nbsp;&nbsp;📄 install.bat</div>
+                    <div class="file">&nbsp;&nbsp;&nbsp;📄 download-models.bat</div>
+                    <div class="folder">&nbsp;&nbsp;&nbsp;📁 src/</div>
+                    <div class="folder">&nbsp;&nbsp;&nbsp;📁 public/</div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">2</span>
+                <h3>Abrir o terminal na pasta correta</h3>
+                <p><strong>Opção A - Windows 11:</strong></p>
+                <ul>
+                    <li>Abra a pasta do projeto no Windows Explorer</li>
+                    <li>Clique na <strong>barra de endereço</strong> (onde mostra o caminho)</li>
+                    <li>Digite <code>cmd</code> e pressione <strong>Enter</strong></li>
+                </ul>
+                
+                <p style="margin-top: 15px;"><strong>Opção B - Windows 10:</strong></p>
+                <ul>
+                    <li>Abra a pasta do projeto no Windows Explorer</li>
+                    <li>Clique com o <strong>botão direito</strong> em um espaço vazio</li>
+                    <li>Selecione <strong>"Abrir janela de comando aqui"</strong> ou <strong>"Abrir no Terminal"</strong></li>
+                </ul>
+                
+                <p style="margin-top: 15px;"><strong>Opção C - Manual:</strong></p>
+                <ul>
+                    <li>Abra o <strong>Prompt de Comando</strong> (cmd)</li>
+                    <li>Navegue até a pasta usando o comando <code>cd</code>:</li>
+                </ul>
+                <div class="code-block">
+                    cd C:\Users\SeuNome\Downloads\altavoz-forensic-1
+                </div>
+                <p><em>(substitua pelo caminho real da sua pasta)</em></p>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">3</span>
+                <h3>Executar o instalador</h3>
+                <p>No terminal que abriu na pasta correta, digite:</p>
+                <div class="code-block">
+                    INSTALAR.bat
+                </div>
+                <p>e pressione <strong>Enter</strong>.</p>
+            </div>
+        </div>
+        
+        <div class="warning">
+            <h3>⚠️ Importante</h3>
+            <p><strong>Não execute o instalador de qualquer lugar!</strong></p>
+            <p style="margin-top: 10px;">Você precisa estar <strong>dentro da pasta do projeto</strong> para que o instalador funcione corretamente.</p>
+        </div>
+        
+        <div class="success">
+            <h3>🎉 Pronto!</h3>
+            <p>Após seguir os 3 passos, o instalador vai:</p>
+            <ul style="text-align: left; display: inline-block; margin-top: 15px;">
+                <li>✓ Verificar o Node.js</li>
+                <li>✓ Instalar as dependências</li>
+                <li>✓ Preparar o sistema</li>
+            </ul>
+            <p style="margin-top: 15px;">Depois execute na ordem:</p>
+            <div style="margin-top: 10px;">
+                <code>download-models.bat</code> → <code>start.bat</code>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="PROBLEMAS.md" class="button">📖 Ver Guia Completo</a>
+            <a href="README.md" class="button">📘 Ver README</a>
+        </div>
+        
+        <div class="footer">
+            <p><strong>by rogerelizar</strong></p>
+            <p style="margin-top: 10px; font-size: 0.9em;">AltaVoz Forensic-1 - Inteligência de Áudio Forense</p>
+        </div>
+    </div>
+</body>
+</html>

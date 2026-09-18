@@ -1,0 +1,121 @@
+╔════════════════════════════════════════════════════════════╗
+║                                                            ║
+║     🎙️  ALTAVOZ FORENSIC-1 - GUIA RÁPIDO DE INSTALAÇÃO    ║
+║                                                            ║
+╚════════════════════════════════════════════════════════════╝
+
+PROBLEMA: "Arquivo package.json não encontrado"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SOLUÇÃO EM 3 PASSOS:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PASSO 1: ENCONTRAR A PASTA DO PROJETO
+────────────────────────────────────────────────────────────
+
+Abra o Windows Explorer e procure a pasta onde você baixou 
+o projeto. Ela deve ter estes arquivos:
+
+    📁 altavoz-forensic-1/
+       📄 package.json          ← ESTE ARQUIVO DEVE EXISTIR
+       📄 install.bat
+       📄 download-models.bat
+       📁 src/
+       📁 public/
+
+Se não encontrar, procure por "package.json" usando a busca 
+do Windows (pressione Win + S).
+
+
+PASSO 2: ABRIR O TERMINAL NA PASTA CORRETA
+────────────────────────────────────────────────────────────
+
+Opção A - Windows 11:
+  1. Abra a pasta do projeto no Windows Explorer
+  2. Clique na BARRA DE ENDEREÇO (onde mostra o caminho)
+  3. Digite: cmd
+  4. Pressione Enter
+
+Opção B - Windows 10:
+  1. Abra a pasta do projeto no Windows Explorer
+  2. Clique com o BOTÃO DIREITO em um espaço vazio
+  3. Selecione "Abrir janela de comando aqui"
+
+Opção C - Manual:
+  1. Abra o Prompt de Comando (cmd)
+  2. Navegue até a pasta usando o comando cd:
+  
+     cd C:\Users\SeuNome\Downloads\altavoz-forensic-1
+     
+     (substitua pelo caminho real da sua pasta)
+
+
+PASSO 3: EXECUTAR O INSTALADOR
+────────────────────────────────────────────────────────────
+
+No terminal que abriu na pasta correta, digite:
+
+    INSTALAR.bat
+
+e pressione Enter.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+COMO SABER SE ESTOU NA PASTA CERTA?
+────────────────────────────────────────────────────────────
+
+Digite este comando no terminal:
+
+    dir package.json
+
+Se aparecer "package.json" na lista → Você está na pasta certa! ✓
+Se aparecer erro → O arquivo não existe nesta pasta ✗
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DEPOIS DA INSTALAÇÃO
+────────────────────────────────────────────────────────────
+
+Execute na ordem:
+
+    1. download-models.bat  (baixa modelos de IA)
+    2. start.bat            (inicia o programa)
+
+O programa será aberto em: http://localhost:5173
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DICAS IMPORTANTES
+────────────────────────────────────────────────────────────
+
+• O projeto foi baixado como ZIP?
+  → Extraia o ZIP antes de instalar
+  → Clique com botão direito → "Extrair tudo"
+
+• Não sabe onde está a pasta?
+  → Procure por "package.json" no Windows Explorer
+  → Use a busca do Windows: Win + S → digite "package.json"
+
+• Ainda com problemas?
+  → Abra o arquivo AJUDA.html no navegador
+  → Leia o arquivo PROBLEMAS.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ARQUIVOS ÚTEIS
+────────────────────────────────────────────────────────────
+
+INSTALAR.bat          → Instala o sistema
+download-models.bat   → Baixa modelos de IA
+start.bat             → Inicia o programa
+verify.bat            → Verifica instalação
+AJUDA.html            → Guia visual (abra no navegador)
+PROBLEMAS.md          → Solução detalhada de problemas
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+by rogerelizar
+
+AltaVoz Forensic-1 - Inteligência de Áudio Forense
