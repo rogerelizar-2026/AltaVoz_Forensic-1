@@ -24,7 +24,10 @@ Isso baixa os modelos de inteligência artificial (~220MB).
 
 O programa será aberto em: **http://localhost:5173**
 
----
+**Solução:**
+```bash
+# Windows
+download-models.bat
 
 ## 🚨 Problemas Comuns
 
