@@ -1,33 +1,127 @@
 @echo off
 REM ============================================================
-REM AltaVoz Forensic-1 - Instalador Unificado (Windows)
+REM AltaVoz Forensic-1 - Instalador Inteligente (Windows)
 REM ============================================================
-REM Este é o ÚNICO arquivo que você precisa executar
+REM Este instalador detecta automaticamente a pasta do projeto
 REM ============================================================
 
 echo.
 echo ==========================================================
 echo.
-echo     🎙️  AltaVoz Forensic-1 - Instalador
+echo     🎙️  AltaVoz Forensic-1 - Instalador Inteligente
 echo.
 echo ==========================================================
 echo.
 
-REM Verificar se está no diretório correto
-if not exist "package.json" (
-    echo ❌ ERRO: Arquivo package.json nao encontrado!
-    echo.
-    echo Este script deve ser executado na pasta raiz do projeto.
-    echo Certifique-se de estar na pasta: altavoz-forensic-1\
-    echo.
-    echo Dica: Navegue ate a pasta correta no Prompt de Comando:
-    echo   cd C:\caminho\para\altavoz-forensic-1
-    echo.
+REM Detectar pasta atual
+set CURRENT_DIR=%CD%
+echo Pasta atual: %CURRENT_DIR%
+echo.
+
+REM Verificar se package.json existe na pasta atual
+if exist "package.json" (
+    echo ✓ package.json encontrado na pasta atual
+    goto :INSTALL
+)
+
+REM Tentar encontrar package.json em subpastas comuns
+echo Procurando package.json...
+echo.
+
+if exist "altavoz-forensic-1\package.json" (
+    echo ✓ Encontrado em: altavoz-forensic-1\
+    cd altavoz-forensic-1
+    goto :INSTALL
+)
+
+if exist "..\package.json" (
+    echo ✓ Encontrado na pasta pai
+    cd ..
+    goto :INSTALL
+)
+
+REM Se não encontrou, perguntar ao usuário
+echo.
+echo ❌ package.json não encontrado automaticamente!
+echo.
+echo ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+echo   O instalador precisa estar na pasta do projeto
+echo ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+echo.
+echo Opções:
+echo.
+echo   1. Navegar manualmente até a pasta do projeto
+echo   2. Digitar o caminho da pasta
+echo   3. Cancelar e executar de outro local
+echo.
+set /p OPCAO="Escolha uma opção (1/2/3): "
+
+if "%OPCAO%"=="1" goto :NAVIGATE
+if "%OPCAO%"=="2" goto :INPUT_PATH
+if "%OPCAO%"=="3" goto :CANCEL
+
+echo Opção inválida!
+pause
+exit /b 1
+
+:NAVIGATE
+echo.
+echo Abra o Windows Explorer e navegue até a pasta do projeto.
+echo Depois volte aqui e pressione Enter.
+echo.
+echo Dica: A pasta deve conter:
+echo   - package.json
+echo   - install.bat
+echo   - src/
+echo   - public/
+echo.
+pause
+echo.
+echo Digite o caminho completo da pasta do projeto:
+set /p PROJECT_PATH="Caminho: "
+if exist "%PROJECT_PATH%\package.json" (
+    cd /d "%PROJECT_PATH%"
+    goto :INSTALL
+) else (
+    echo ❌ Pasta inválida!
     pause
     exit /b 1
 )
 
-echo ✓ Diretorio correto detectado
+:INPUT_PATH
+echo.
+echo Digite o caminho completo da pasta do projeto:
+echo Exemplo: C:\Users\SeuNome\Downloads\altavoz-forensic-1
+echo.
+set /p PROJECT_PATH="Caminho: "
+if exist "%PROJECT_PATH%\package.json" (
+    cd /d "%PROJECT_PATH%"
+    goto :INSTALL
+) else (
+    echo ❌ Pasta inválida! package.json não encontrado em:
+    echo    %PROJECT_PATH%
+    echo.
+    echo Verifique se o caminho está correto e tente novamente.
+    pause
+    exit /b 1
+)
+
+:CANCEL
+echo.
+echo Instalação cancelada.
+echo.
+echo Para instalar corretamente:
+echo   1. Navegue até a pasta do projeto no Windows Explorer
+echo   2. Clique com o botão direito na pasta
+echo   3. Selecione "Abrir no Terminal" ou "Abrir janela de comando aqui"
+echo   4. Execute: install.bat
+echo.
+pause
+exit /b 0
+
+:INSTALL
+echo.
+echo ✓ Pasta do projeto detectada: %CD%
 echo.
 
 REM Passo 1: Verificar Node.js
@@ -211,7 +305,10 @@ echo        download-models.bat
 echo.
 echo   2. INICIAR O PROGRAMA
 echo.
-echo      Execute o comando:
+echo      Execute o arquivo:
+echo        start.bat
+echo.
+echo      Ou manualmente:
 echo        npm run dev
 echo.
 echo      O programa sera aberto no navegador em:

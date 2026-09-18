@@ -1,261 +1,113 @@
 # 🎙️ AltaVoz Forensic-1
 
-**Plataforma de Inteligência de Áudio Forense - Offline-First**
+## ⚡ Instalação Rápida (3 Passos)
 
-Sistema profissional para transcrição, diarização de falantes e análise forense de áudio, com cadeia de custódia criptográfica e processamento 100% local.
+### 1️⃣ Instalar o Sistema
 
----
+**Dê duplo clique em:** `INSTALAR.bat`
 
-## 🚀 Instalação Rápida (3 Passos)
+O instalador vai automaticamente:
+- ✓ Detectar a pasta do projeto
+- ✓ Verificar o Node.js
+- ✓ Instalar todas as dependências
+- ✓ Preparar o sistema
 
-### Windows
+### 2️⃣ Baixar Modelos de IA
 
-```bash
-# 1. Instalar o sistema
-install.bat
+**Dê duplo clique em:** `download-models.bat`
 
-# 2. Baixar modelos de IA
-download-models.bat
+Isso baixa os modelos de inteligência artificial (~220MB).
 
-# 3. Iniciar o programa
-start.bat
-```
+### 3️⃣ Iniciar o Programa
 
-### Linux / macOS
+**Dê duplo clique em:** `start.bat`
 
-```bash
-# 1. Instalar o sistema
-chmod +x install.sh
-./install.sh
-
-# 2. Baixar modelos de IA
-chmod +x download-models.sh
-./download-models.sh
-
-# 3. Iniciar o programa
-chmod +x start.sh
-./start.sh
-```
-
-**Pronto!** O programa será aberto em: **http://localhost:5173**
+O programa será aberto em: **http://localhost:5173**
 
 ---
 
-## 📋 Scripts Disponíveis
+## 🚨 Problemas Comuns
 
-| Script | Função | Quando Usar |
-|--------|--------|-------------|
-| `install.bat` / `install.sh` | Instalação completa | Primeira vez |
-| `download-models.bat` / `download-models.sh` | Baixar modelos de IA | Após instalação |
-| `start.bat` / `start.sh` | Iniciar o programa | Uso diário |
-| `verify.bat` / `verify.sh` | Verificar instalação | Solução de problemas |
-
----
-
-## 📖 Guia do Usuário
-
-### O que o AltaVoz faz?
-
-O AltaVoz Forensic-1 é um programa que ajuda a analisar gravações de áudio de forma segura e profissional:
-
-- ✓ **Transcreve** o que é dito em gravações (transforma fala em texto)
-- ✓ **Identifica** quem está falando em cada momento
-- ✓ **Melhora** a qualidade do áudio para facilitar a compreensão
-- ✓ **Garante** que o áudio original não seja alterado
-- ✓ **Registra** tudo que foi feito com o áudio
-
-### Como Usar
-
-1. **Abra o programa** executando `start.bat` (Windows) ou `./start.sh` (Linux/macOS)
-2. **Importe um áudio** clicando em "Importar Áudio"
-3. **Transcreva** clicando em "Transcrever"
-4. **Identifique falantes** clicando em "Identificar Falantes"
-5. **Exporte os resultados** quando terminar
-
-### Dicas Importantes
-
-- ✓ **Salve seu trabalho** frequentemente
-- ✓ **Use fones de ouvido** para ouvir detalhes
-- ✓ **Verifique a transcrição** e corrija erros
-- ✓ **Mantenha o áudio original** - nunca apague
-- ✓ **Anote suas observações** durante a análise
-
----
-
-## 🔧 Solução de Problemas
-
-### "Node.js não encontrado"
+### ❌ "Arquivo package.json não encontrado"
 
 **Solução:**
-1. Execute `install.bat` (Windows) ou `./install.sh` (Linux/macOS)
-2. O instalador vai abrir o site do Node.js automaticamente
-3. Baixe e instale o Node.js
-4. Execute o instalador novamente
+1. Abra o Windows Explorer
+2. Navegue até a pasta do projeto (deve ter `package.json`, `src/`, `public/`)
+3. Clique na barra de endereço e digite `cmd` + Enter
+4. Execute: `INSTALAR.bat`
 
-### "Modelos não encontrados"
+**Ou veja o guia visual:** Abra o arquivo `AJUDA.html` no navegador
 
-**Solução:**
-```bash
-# Windows
-download-models.bat
-
-# Linux/macOS
-./download-models.sh
-```
-
-### "Porta 5173 já está em uso"
+### ❌ "Node.js não encontrado"
 
 **Solução:**
-```bash
-npm run dev -- --port 3000
-```
+1. O instalador vai abrir o site automaticamente
+2. Baixe o Node.js (botão verde "LTS")
+3. Instale e execute o instalador novamente
 
-### Verificação Completa
+### ❌ "Modelos não encontrados"
 
-Execute o script de verificação:
-```bash
-# Windows
-verify.bat
-
-# Linux/macOS
-./verify.sh
-```
+**Solução:**
+Execute: `download-models.bat`
 
 ---
 
-## 📊 Requisitos do Sistema
+## 📋 Arquivos Importantes
 
-**Mínimo:**
-- Node.js 18.x ou superior
-- 4 GB de RAM
-- 2 GB de espaço em disco
-- Navegador moderno (Chrome 90+, Firefox 89+, Safari 15+)
-
-**Recomendado:**
-- Node.js 20.x LTS
-- 8 GB de RAM ou mais
-- 10 GB de espaço em disco (para modelos)
-- SSD para melhor desempenho
+| Arquivo | Função |
+|---------|--------|
+| `INSTALAR.bat` | Instala o sistema (1º passo) |
+| `download-models.bat` | Baixa modelos de IA (2º passo) |
+| `start.bat` | Inicia o programa (3º passo) |
+| `verify.bat` | Verifica se tudo está instalado |
+| `AJUDA.html` | Guia visual de instalação |
+| `PROBLEMAS.md` | Solução detalhada de problemas |
 
 ---
 
-## 🏗️ Arquitetura
+## 📖 O que é o AltaVoz?
 
-### Pilares do Sistema
+O AltaVoz Forensic-1 é um programa que ajuda a analisar gravações de áudio:
 
-1. **Criptografia e Integridade**
-   - AES-256-GCM para criptografia
-   - Argon2id para derivação de chaves
-   - SHA-256 + HMAC para cadeia de hash
+- ✓ **Transcreve** o que é dito (transforma fala em texto)
+- ✓ **Identifica** quem está falando
+- ✓ **Melhora** a qualidade do áudio
+- ✓ **Garante** que o áudio original não é alterado
+- ✓ **Registra** tudo que foi feito
 
-2. **DSP e Diarização**
-   - Silero VAD para detecção de voz
-   - ECAPA-TDNN para embeddings de falantes
-   - Filtros forenses avançados
-
-3. **ASR Local**
-   - whisper.cpp WASM para transcrição
-   - Modelos ggml (Tiny, Base, Small)
-   - Processamento 100% local
-
-4. **UI/UX Forense**
-   - Espectrograma com paletas daltônicas
-   - Timeline de falantes
-   - WCAG 2.1 AA compliance
+**100% offline** - Nenhum áudio sai do seu computador!
 
 ---
 
-## 🔒 Segurança e Privacidade
+## 💻 Como Usar
 
-### O que NÃO acontece:
-
-- ❌ Nenhum áudio é enviado para servidores externos
-- ❌ Nenhum dado é coletado ou transmitido
-- ❌ Nenhum arquivo é armazenado na nuvem
-- ❌ Nenhuma telemetria ou analytics
-
-### O que ACONTECE:
-
-- ✓ Todo processamento ocorre no seu navegador
-- ✓ Arquivos são armazenados apenas no seu dispositivo
-- ✓ Criptografia protege dados sensíveis
-- ✓ Cadeia de custódia registra todas as operações
+1. **Importar Áudio** → Clique em "Importar Áudio"
+2. **Transcrever** → Clique em "Transcrever"
+3. **Identificar Falantes** → Clique em "Identificar Falantes"
+4. **Exportar** → Clique em "Exportar"
 
 ---
 
-## 📦 Modelos de IA
+## 🔧 Requisitos
 
-| Modelo | Tamanho | Função |
-|--------|---------|--------|
-| Silero VAD | 2 MB | Detecção de atividade de voz |
-| Whisper Tiny | 75 MB | Transcrição rápida |
-| Whisper Base | 142 MB | Transcrição multilíngue |
-
-**Total:** ~220 MB (download único)
+- **Node.js** 18.x ou superior (instalado automaticamente)
+- **4 GB** de RAM
+- **2 GB** de espaço em disco
+- **Navegador moderno** (Chrome, Firefox, Edge)
 
 ---
 
-## 💻 Comandos Avançados
+## 📞 Precisa de Ajuda?
 
-```bash
-# Instalação completa
-npm install
-
-# Download de modelos
-npm run download-models
-
-# Iniciar em modo desenvolvimento
-npm run dev
-
-# Criar build de produção
-npm run build
-
-# Visualizar build de produção
-npm run preview
-
-# Executar testes
-npm run test
-
-# Verificar qualidade do código
-npm run lint
-```
-
----
-
-## 📄 Licença
-
-Este projeto é licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
----
-
-## 🤝 Contribuindo
-
-Contribuições são bem-vindas! Por favor, leia as diretrizes de contribuição antes de submeter pull requests.
-
----
-
-## 📞 Suporte
-
-Para dúvidas, problemas ou sugestões:
-
-- **Documentação**: Consulte os manuais na interface do programa
-- **Verificação**: Execute `verify.bat` ou `./verify.sh`
-- **Issues**: Abra uma issue no GitHub
+1. **Guia Visual:** Abra `AJUDA.html` no navegador
+2. **Solução de Problemas:** Leia `PROBLEMAS.md`
+3. **Verificação:** Execute `verify.bat`
 
 ---
 
 ## ⚖️ Aviso Legal
 
-**IMPORTANTE**: Este documento fornece apenas orientação técnica. A admissibilidade de evidências digitais varia conforme a jurisdição. Revisão jurídica por counsel qualificado é necessária antes da implantação em qualquer processo legal. Isto não constitui aconselhamento jurídico.
-
----
-
-## 🙏 Agradecimentos
-
-- **OpenAI** pelo modelo Whisper
-- **Silero** pelo modelo VAD
-- **Comunidade whisper.cpp** pela implementação WASM
-- **ONNX Runtime** pela infraestrutura de inferência
+Este software é fornecido apenas para orientação técnica. A admissibilidade de evidências digitais varia conforme a jurisdição. Consulte um advogado antes de usar em processos legais.
 
 ---
 
@@ -265,8 +117,8 @@ Para dúvidas, problemas ou sugestões:
 
 <div align="center">
 
-**AltaVoz Forensic-1** | Inteligência de Áudio Forense | Offline-First | Zero Egress
+### 🚀 Comece Agora!
 
-[Instalação](#-instalação-rápida-3-passos) • [Guia do Usuário](#-guia-do-usuário) • [Arquitetura](#-arquitetura)
+**Dê duplo clique em `INSTALAR.bat`**
 
 </div>
