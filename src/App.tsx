@@ -1,28 +1,30 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ExecutiveSummary } from './components/ExecutiveSummary';
+import { Architecture } from './components/Architecture';
 import { Roadmap } from './components/Roadmap';
 import { CodeSnippets } from './components/CodeSnippets';
 import { LibraryRecommendations } from './components/LibraryRecommendations';
 import { ForensicChecklist } from './components/ForensicChecklist';
-import { Architecture } from './components/Architecture';
 import { InstallationManual } from './components/InstallationManual';
 import { UserGuide } from './components/UserGuide';
+import { AudioAnalyzer } from './components/AudioAnalyzer';
 
-type TabId = 'summary' | 'architecture' | 'roadmap' | 'code' | 'libraries' | 'checklist' | 'installation' | 'userguide';
-
-const tabs: { id: TabId; label: string; icon: string }[] = [
-  { id: 'summary', label: 'Resumo Executivo', icon: '📋' },
-  { id: 'architecture', label: 'Arquitetura', icon: '🏗️' },
-  { id: 'roadmap', label: 'Roadmap', icon: '🗺️' },
-  { id: 'code', label: 'Trechos de Código', icon: '💻' },
-  { id: 'libraries', label: 'Bibliotecas e Modelos', icon: '📦' },
-  { id: 'checklist', label: 'Checklist Forense', icon: '✅' },
-  { id: 'installation', label: 'Manual de Instalação', icon: '📥' },
-  { id: 'userguide', label: 'Guia do Usuário', icon: '📖' },
-];
+type TabId = 'analyzer' | 'summary' | 'architecture' | 'roadmap' | 'code' | 'libraries' | 'checklist' | 'installation' | 'userguide';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<TabId>('summary');
+  const [activeTab, setActiveTab] = useState<TabId>('analyzer');
+
+  const tabs = [
+    { id: 'analyzer' as TabId, label: '🎙️ Analisador de Áudio', icon: '🎙️' },
+    { id: 'summary' as TabId, label: '📋 Resumo', icon: '📋' },
+    { id: 'architecture' as TabId, label: '🏗️ Arquitetura', icon: '🏗️' },
+    { id: 'roadmap' as TabId, label: '🗺️ Roadmap', icon: '🗺️' },
+    { id: 'code' as TabId, label: '💻 Código', icon: '💻' },
+    { id: 'libraries' as TabId, label: '📦 Bibliotecas', icon: '📦' },
+    { id: 'checklist' as TabId, label: '✅ Checklist', icon: '✅' },
+    { id: 'installation' as TabId, label: '📥 Instalação', icon: '📥' },
+    { id: 'userguide' as TabId, label: '📖 Guia', icon: '📖' },
+  ];
 
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100">
@@ -35,7 +37,7 @@ export default function App() {
             </div>
             <div>
               <h1 className="text-lg font-bold text-white">AltaVoz Forensic-1</h1>
-              <p className="text-xs text-gray-400">Referência de Arquitetura e Implementação — Inteligência de Áudio de Grau Forense</p>
+              <p className="text-xs text-gray-400">Sistema Funcional de Análise Forense de Áudio</p>
             </div>
           </div>
         </div>
@@ -48,9 +50,6 @@ export default function App() {
             {tabs.map((tab) => (
               <button
                 key={tab.id}
-                role="tab"
-                aria-selected={activeTab === tab.id}
-                aria-controls={`panel-${tab.id}`}
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
                   activeTab === tab.id
@@ -58,7 +57,6 @@ export default function App() {
                     : 'text-gray-400 hover:text-gray-200 hover:bg-gray-800/50'
                 }`}
               >
-                <span className="mr-2">{tab.icon}</span>
                 {tab.label}
               </button>
             ))}
@@ -68,43 +66,21 @@ export default function App() {
 
       {/* Content */}
       <main className="max-w-7xl mx-auto px-4 py-8">
-        <div role="tabpanel" id={`panel-${activeTab}`} aria-labelledby={activeTab}>
-          {activeTab === 'summary' && <ExecutiveSummary />}
-          {activeTab === 'architecture' && <Architecture />}
-          {activeTab === 'roadmap' && <Roadmap />}
-          {activeTab === 'code' && <CodeSnippets />}
-          {activeTab === 'libraries' && <LibraryRecommendations />}
-          {activeTab === 'checklist' && <ForensicChecklist />}
-          {activeTab === 'installation' && <InstallationManual />}
-          {activeTab === 'userguide' && <UserGuide />}
-        </div>
+        {activeTab === 'analyzer' && <AudioAnalyzer />}
+        {activeTab === 'summary' && <ExecutiveSummary />}
+        {activeTab === 'architecture' && <Architecture />}
+        {activeTab === 'roadmap' && <Roadmap />}
+        {activeTab === 'code' && <CodeSnippets />}
+        {activeTab === 'libraries' && <LibraryRecommendations />}
+        {activeTab === 'checklist' && <ForensicChecklist />}
+        {activeTab === 'installation' && <InstallationManual />}
+        {activeTab === 'userguide' && <UserGuide />}
       </main>
 
       {/* Footer */}
       <footer className="border-t border-gray-800 bg-gray-900/50 mt-16">
         <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-500">
-              AltaVoz Forensic-1 — Zero-egress, offline-first, inteligência de áudio de grau forense.
-            </p>
-            <div className="flex gap-4 text-xs text-gray-600">
-              <span>TypeScript 5.x Strict</span>
-              <span>•</span>
-              <span>WebCrypto API</span>
-              <span>•</span>
-              <span>ONNX Runtime Web</span>
-              <span>•</span>
-              <span>whisper.cpp WASM</span>
-            </div>
-          </div>
-          <div className="mt-4 p-3 rounded-lg bg-amber-900/20 border border-amber-800/30">
-            <p className="text-xs text-amber-300/80">
-              <strong>Aviso:</strong> Este documento fornece apenas orientação técnica de arquitetura. 
-              A admissibilidade de evidências digitais varia conforme a jurisdição. Revisão jurídica por 
-              counsel qualificado é necessária antes da implantação em qualquer processo legal. Isto não constitui aconselhamento jurídico.
-            </p>
-          </div>
-          <div className="mt-4 text-center">
+          <div className="text-center">
             <p className="text-sm text-gray-400 font-medium">by rogerelizar</p>
           </div>
         </div>
